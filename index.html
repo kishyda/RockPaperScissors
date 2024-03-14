@@ -6,6 +6,36 @@
     </head>
     <body>
         <script>
+            function ProgramRunner(){
+                (match());
+            }
+            function match(){
+                let playerwincounter = 0;
+                let computerwincounter = 0;
+                let gamecounter = 0;
+                while(gamecounter < 5){
+                    let result = gameRunTime();
+                    if(result == 1){
+                        ++playerwincounter;
+                    }
+                    if(result == 3){
+                        ++computerwincounter;
+                    }
+                    ++gamecounter;
+                    console.log(gamecounter);
+                }
+                if(playerwincounter > computerwincounter){
+                    console.log("Player wins" + " " + playerwincounter + "to " + computerwincounter)
+                    return 1;
+                }
+                if(playerwincounter < computerwincounter){
+                    console.log("It's a loss. " + playerwincounter +" to " + computerwincounter)
+                    return 3;
+                }else{
+                    console.log("It's a tie. " +playerwincounter +" to " + computerwincounter);
+                    return 2;
+                }
+            }
             function getComputerChoice() {
                 let number = Math.floor(Math.random() * 100) + 1;
                 if(number <= 33 && number > 0)
@@ -54,7 +84,7 @@
             }
             function gameRunTime(){
                 let playerchoice = playerSelection();
-                if(playerchoice == 4){
+                while(playerchoice == 4){
                     playerchoice = playerSelection();
                 }
                 let computerchoice = getComputerChoice();
