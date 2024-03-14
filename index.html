@@ -6,7 +6,112 @@
     </head>
     <body>
         <script>
-            
+            function getComputerChoice() {
+                let number = Math.floor(Math.random() * 100) + 1;
+                if(number <= 33 && number > 0)
+                {
+                    return 1;
+                }
+                if(number <= 66 && number > 33)
+                {
+                    return 2;
+                }
+                if(number <= 100 && number > 66)
+                {
+                    return 3;
+                }
+                console.log(computerchoice)
+                console.log(number);
+            }
+            function playerSelection() {
+                let playerchoice = prompt("Enter your selection:");
+                playerchoice = playerchoice.toLowerCase();
+                console.log(playerchoice);
+                if(playerchoice == "rock"){
+                    return 1;
+                }
+                if(playerchoice == "paper"){
+                    return 2;
+                }
+                if(playerchoice == "scissors"){
+                    return 3;
+                }
+            }
+            function convertSelection(number) {
+                if(number == 1){
+                    return "Rock";
+                }
+                if(number == 2){
+                    return "Paper";
+                }
+                if(number == 3){
+                    return "Scissors";
+                }
+            }
+            function gameRunTime(){
+                let playerchoice = playerSelection();
+                let computerchoice = getComputerChoice();
+                let playerchoicestring = convertSelection(playerchoice);
+                let computerchoicestring = convertSelection(computerchoice);
+                console.log(`You chose ${playerchoicestring}. Computer chose ${computerchoicestring}`);
+                let gameOutcome;
+                let gameOutcomenum;
+                if(playerchoice == 1)
+                {
+                    if(computerchoice == 1){
+                        gameOutcome = "tie";
+                        gameOutcome = `It's a ${gameOutcome}.`
+                        return 2;
+                        
+                    }
+                    if(computerchoice == 2){
+                        gameOutcome = "Loss";
+                        gameOutcome = `It's a ${gameOutcome}. Paper beats rock.`;
+                        return 3;
+                    }
+                    if(computerchoice == 3){
+                        gameOutcome = "Win";
+                        gameOutcome = `It's a ${gameOutcome}! Rock beats scissors`;
+                        return 1;
+                    }
+                }
+                if(playerchoice == 2){
+                    if(computerchoice == 1){
+                        gameOutcome = "Win";
+                        gameOutcome = `It's a ${gameOutcome}! Paper beats rock.`;
+                        return 1;
+                    }
+                    if(computerchoice == 2)
+                    {
+                        gameOutcome = "Tie";
+                        gameOutcome = `It's a ${gameOutcome}.`;
+                        return 2;
+                    }
+                    if(computerchoice == 3){
+                        gameOutcome = "Loss";
+                        gameOutcome = `It's a ${gameOutcome}. Scissors beats paper.`;
+                        return 3;
+                    }
+                }
+                if(playerchoice == 3){
+                    if(computerchoice == 1){
+                        gameOutcome = "Loss";
+                        gameOutcome = `It's a ${gameOutcome}. Rock beats scissors`; 
+                        return 3;
+                    }
+                    if(computerchoice == 2){
+                        gameOutcome = "Win";
+                        gameOutcome = `It's a ${gameOutcome}!. Scissors besats paper.`;
+                        return 1;
+                    }
+                    if(computerchoice == 3){
+                        gameOutcome = "Tie";
+                        gameOutcome = `It's a ${gameOutcome}`;
+                        return 2;
+                    }
+            }
+            console.log(gameOutcome)
+        }
         </script>
     </body>
 </html>
