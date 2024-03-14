@@ -36,6 +36,10 @@
                 if(playerchoice == "scissors"){
                     return 3;
                 }
+                else{
+                    console.log("You did not enter a valid choice. Please try again.");
+                    return 4;
+                }
             }
             function convertSelection(number) {
                 if(number == 1){
@@ -50,6 +54,9 @@
             }
             function gameRunTime(){
                 let playerchoice = playerSelection();
+                if(playerchoice == 4){
+                    playerchoice = playerSelection();
+                }
                 let computerchoice = getComputerChoice();
                 let playerchoicestring = convertSelection(playerchoice);
                 let computerchoicestring = convertSelection(computerchoice);
@@ -61,17 +68,20 @@
                     if(computerchoice == 1){
                         gameOutcome = "tie";
                         gameOutcome = `It's a ${gameOutcome}.`
+                        console.log(gameOutcome);
                         return 2;
                         
                     }
                     if(computerchoice == 2){
                         gameOutcome = "Loss";
                         gameOutcome = `It's a ${gameOutcome}. Paper beats rock.`;
+                        console.log(gameOutcome);
                         return 3;
                     }
                     if(computerchoice == 3){
                         gameOutcome = "Win";
                         gameOutcome = `It's a ${gameOutcome}! Rock beats scissors`;
+                        console.log(gameOutcome);
                         return 1;
                     }
                 }
@@ -79,17 +89,20 @@
                     if(computerchoice == 1){
                         gameOutcome = "Win";
                         gameOutcome = `It's a ${gameOutcome}! Paper beats rock.`;
+                        console.log(gameOutcome);
                         return 1;
                     }
                     if(computerchoice == 2)
                     {
                         gameOutcome = "Tie";
                         gameOutcome = `It's a ${gameOutcome}.`;
+                        console.log(gameOutcome);
                         return 2;
                     }
                     if(computerchoice == 3){
                         gameOutcome = "Loss";
                         gameOutcome = `It's a ${gameOutcome}. Scissors beats paper.`;
+                        console.log(gameOutcome);
                         return 3;
                     }
                 }
@@ -97,20 +110,22 @@
                     if(computerchoice == 1){
                         gameOutcome = "Loss";
                         gameOutcome = `It's a ${gameOutcome}. Rock beats scissors`; 
+                        console.log(gameOutcome);
                         return 3;
                     }
                     if(computerchoice == 2){
                         gameOutcome = "Win";
                         gameOutcome = `It's a ${gameOutcome}!. Scissors besats paper.`;
+                        console.log(gameOutcome);
                         return 1;
                     }
                     if(computerchoice == 3){
                         gameOutcome = "Tie";
                         gameOutcome = `It's a ${gameOutcome}`;
+                        console.log(gameOutcome);
                         return 2;
                     }
             }
-            console.log(gameOutcome)
         }
         </script>
     </body>
