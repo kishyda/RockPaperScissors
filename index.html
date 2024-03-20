@@ -3,160 +3,27 @@
     <head>
         <meta charset="utf-8">
         <title>Rock Paper Scissors</title>
+        <script src = "script.js" defer></script>
+        <link rel="stylesheet" href="styles.css">
     </head>
     <body>
-        <script>
-            function ProgramRunner(){
-                (match());
-            }
-            function match(){
-                let playerwincounter = 0;
-                let computerwincounter = 0;
-                let gamecounter = 0;
-                while(gamecounter < 5){
-                    let result = gameRunTime();
-                    if(result == 1){
-                        ++playerwincounter;
-                    }
-                    if(result == 3){
-                        ++computerwincounter;
-                    }
-                    ++gamecounter;
-                    console.log(gamecounter);
-                }
-                if(playerwincounter > computerwincounter){
-                    console.log("Player wins" + " " + playerwincounter + "to " + computerwincounter)
-                    return 1;
-                }
-                if(playerwincounter < computerwincounter){
-                    console.log("It's a loss. " + playerwincounter +" to " + computerwincounter)
-                    return 3;
-                }else{
-                    console.log("It's a tie. " +playerwincounter +" to " + computerwincounter);
-                    return 2;
-                }
-            }
-            function getComputerChoice() {
-                let number = Math.floor(Math.random() * 100) + 1;
-                if(number <= 33 && number > 0)
-                {
-                    return 1;
-                }
-                if(number <= 66 && number > 33)
-                {
-                    return 2;
-                }
-                if(number <= 100 && number > 66)
-                {
-                    return 3;
-                }
-                console.log(computerchoice)
-                console.log(number);
-            }
-            function playerSelection() {
-                let playerchoice = prompt("Enter your selection:");
-                playerchoice = playerchoice.toLowerCase();
-                console.log(playerchoice);
-                if(playerchoice == "rock"){
-                    return 1;
-                }
-                if(playerchoice == "paper"){
-                    return 2;
-                }
-                if(playerchoice == "scissors"){
-                    return 3;
-                }
-                else{
-                    console.log("You did not enter a valid choice. Please try again.");
-                    return 4;
-                }
-            }
-            function convertSelection(number) {
-                if(number == 1){
-                    return "Rock";
-                }
-                if(number == 2){
-                    return "Paper";
-                }
-                if(number == 3){
-                    return "Scissors";
-                }
-            }
-            function gameRunTime(){
-                let playerchoice = playerSelection();
-                while(playerchoice == 4){
-                    playerchoice = playerSelection();
-                }
-                let computerchoice = getComputerChoice();
-                let playerchoicestring = convertSelection(playerchoice);
-                let computerchoicestring = convertSelection(computerchoice);
-                console.log(`You chose ${playerchoicestring}. Computer chose ${computerchoicestring}`);
-                let gameOutcome;
-                let gameOutcomenum;
-                if(playerchoice == 1)
-                {
-                    if(computerchoice == 1){
-                        gameOutcome = "tie";
-                        gameOutcome = `It's a ${gameOutcome}.`
-                        console.log(gameOutcome);
-                        return 2;
-                        
-                    }
-                    if(computerchoice == 2){
-                        gameOutcome = "Loss";
-                        gameOutcome = `It's a ${gameOutcome}. Paper beats rock.`;
-                        console.log(gameOutcome);
-                        return 3;
-                    }
-                    if(computerchoice == 3){
-                        gameOutcome = "Win";
-                        gameOutcome = `It's a ${gameOutcome}! Rock beats scissors`;
-                        console.log(gameOutcome);
-                        return 1;
-                    }
-                }
-                if(playerchoice == 2){
-                    if(computerchoice == 1){
-                        gameOutcome = "Win";
-                        gameOutcome = `It's a ${gameOutcome}! Paper beats rock.`;
-                        console.log(gameOutcome);
-                        return 1;
-                    }
-                    if(computerchoice == 2)
-                    {
-                        gameOutcome = "Tie";
-                        gameOutcome = `It's a ${gameOutcome}.`;
-                        console.log(gameOutcome);
-                        return 2;
-                    }
-                    if(computerchoice == 3){
-                        gameOutcome = "Loss";
-                        gameOutcome = `It's a ${gameOutcome}. Scissors beats paper.`;
-                        console.log(gameOutcome);
-                        return 3;
-                    }
-                }
-                if(playerchoice == 3){
-                    if(computerchoice == 1){
-                        gameOutcome = "Loss";
-                        gameOutcome = `It's a ${gameOutcome}. Rock beats scissors`; 
-                        console.log(gameOutcome);
-                        return 3;
-                    }
-                    if(computerchoice == 2){
-                        gameOutcome = "Win";
-                        gameOutcome = `It's a ${gameOutcome}!. Scissors besats paper.`;
-                        console.log(gameOutcome);
-                        return 1;
-                    }
-                    if(computerchoice == 3){
-                        gameOutcome = "Tie";
-                        gameOutcome = `It's a ${gameOutcome}`;
-                        console.log(gameOutcome);
-                        return 2;
-                    }
-            }
-        }
-        </script>
+       <div class="main">
+        <div class="finalScore">
+            <div class="finalText"></div>
+        </div>
+        <div class="scoreline">
+            <div class="player">Player: 0</div>
+            <div class="computer">Computer: 0</div>
+        </div>
+        <div class="results">
+            <div class="text">Choose your hand</div>
+            <div class="subtext"></div>
+        </div>
+        <div class="buttonContainer">
+            <button class="rock">rock</button>
+            <button class="paper">paper</button>
+            <button class="scissors">scissors</button>
+        </div>
+       </div>
     </body>
 </html>
