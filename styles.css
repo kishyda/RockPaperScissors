@@ -1,21 +1,28 @@
 body {
     display: flex;
     height: 100vh;
-    background-color: aliceblue;
-}
-.main {
-    display: flex;
-    flex-grow: 1;
-    flex-direction: column;
+    background-color: #36454f;
     justify-content: center;
     align-items: center;
 }
 
-.buttonContainer button{
+.main {
+    display: flex;
+    flex-grow: 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: gray;
+    border-radius: 50px;
+    padding: 50px;
+}
+
+.buttonContainer button {
     margin: 10px;
     padding: 10px;
-    border-radius: 4px;
+    border-radius: 75px;
     width: 100px;
+
 }
 
 .confirmChoice {
@@ -31,6 +38,7 @@ body {
     margin: 10px;
     background-color: bisque;
     min-height: 75px;
+    border-radius: 75px;
 }
 
 .text {
@@ -48,4 +56,47 @@ body {
     width: 350px;
     justify-content: space-evenly;
     align-items: space-between;
+}
+
+.player {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: buttonface;
+    padding: 10px;
+    width: 100px;
+    margin-bottom: 15px;
+    border-radius: 75px;
+    border-top: solid white 1px;
+    border-left: solid white 1px;
+}
+
+.computer {
+    display: flex;
+    justify-content: center;
+    background-color: buttonface;
+    padding: 10px;
+    margin-bottom: 15px;
+    width: 100px;
+    border-radius: 75px;
+    border-top: solid white 1px;
+    border-left: solid white 1px;
+}
+
+.finalText {
+    padding: 10px;
+    font-size: 56px;
+    background-color: buttonface;
+    border-radius: 75px;
+    margin-bottom: 25px;
+    min-height: 75px;
+    min-width: 400px;
+
+}
+
+.finalScore {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
