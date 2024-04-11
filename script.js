@@ -146,3 +146,32 @@ function doubleObj() {
         console.log(obj[prop])
     }
 }
+
+function makeEvenArray(lowerlimit, upperlimit) {
+    let obj = {};
+    for (let i = lowerlimit; i < upperlimit; i++) {
+        if (i % 2 === 0) {
+            obj[i] = i;
+        }
+    }
+    return obj;
+}
+function sumOfTripledEvens() {
+    let obj = makeEvenArray(0, 100);
+    let sum = 0;
+    for (let prop in obj) {
+        if (prop % 2 === 0) {
+            obj[prop] = 3 * obj[prop];
+        }
+    }
+    for (let prop in obj) {
+        sum += obj[prop];
+    }
+    return sum;
+
+}
+
+function selfReduce() {
+    let array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    console.log(array.reduce((total, currentitem) => total * currentitem))
+}
